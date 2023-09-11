@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './styles.css';
+import './app.css';
 import logo from './assets/font.png';
 import sound from './assets/Avengers.mp3';
 
@@ -13,7 +13,8 @@ export default function App() {
     if (isPlaying) {
       audio.pause();
     } else {
-      audio.play();
+      audio.volume = 0.2
+      audio.play()
     }
 
     setIsPlaying(!isPlaying);
