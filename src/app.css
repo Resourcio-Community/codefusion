@@ -31,11 +31,11 @@ body{
 }
 
 .Background {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  position: relative;
 }
 
 .form-container{

@@ -57,8 +57,8 @@ export default function App() {
         console.log('Data successfully posted.')
       }
     }
-    catch (error) {
-      console.error(error)
+    catch (err) {
+      console.error(err)
     }
   }
 
