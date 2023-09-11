@@ -70,12 +70,12 @@ export default function App() {
     <div className="Background">
       <form>
         <img src={logo} alt="Logo" width="200px" />
-        <div className="input">
+        {/* <div className="input">
           <label htmlFor="fname">Name:</label>
           <input type="text" id="fname" value={user.name}
             onChange={getUserData}
             name="name" required />
-        </div>
+        </div> */}
         <div className="input">
           <label htmlFor="femail">Email:</label>
           <input type="text" id="femail" value={user.email}
