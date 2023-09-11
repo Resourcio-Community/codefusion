@@ -15,4 +15,4 @@ Details:
 8. pause button to pause music, vol +/- button(optional) -- but optional, alternatively add low vol bg music
 
 *Tech Team meet - Summary - 06.09.23
-Deadline: 13th sept*
+Deadline: 12th sept*
