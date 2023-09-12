@@ -7,7 +7,7 @@
   font-family: 'Oswald', sans-serif;
 }
 
-body{
+body {
   overflow: hidden;
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0) 0%,
@@ -21,13 +21,49 @@ body{
   animation: zoomin 3s ease-in-out alternate infinite;
 }
 
-@keyframes zoomin{
-  0%{
+@keyframes zoomin {
+  0% {
     background-size: 100% 100%;
   }
-  100%{
+
+  100% {
     background-size: 102% 102%;
   }
+}
+
+.audio {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.audio ion-icon {
+  font-size: 1.9rem;
+}
+
+.payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.payment button {
+  padding: 12px 36px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  color: #fb4f06;
+  background-color: #fff156;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 300ms ease-in;
+}
+
+.payment button:hover{
+  background: #fff266;
+  color: #272727;
 }
 
 .Background {
@@ -38,7 +74,7 @@ body{
   height: 100vh;
 }
 
-.form-container{
+.form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,21 +95,9 @@ body{
   width: 50%;
 }
 
-.form-container .audio{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.audio img {
+.form-container img {
   width: 220px;
-}
-
-.audio ion-icon{
-  transform: translateY(6px);
+  padding: 2.5rem 0 1.2rem 0;
 }
 
 .form-container .input {
