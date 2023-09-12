@@ -1,17 +1,20 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "Resourcio Community Codefusion",
   "keywords": [
-    "react",
-    "starter"
+    "RC",
+    "Codefusion"
   ],
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^1.5.0",
     "loader-utils": "3.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "5.3.4",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.3"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",
@@ -28,5 +31,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
   ]
 }
