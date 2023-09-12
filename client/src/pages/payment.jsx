@@ -67,7 +67,7 @@ const Payment = () => {
                         }
                     }
                     else {
-                        // Baccha do your job, make a error toast
+                        toast.error("Payment verification failed. Please try again later.");
                     }
                 }
                 catch (err) {
