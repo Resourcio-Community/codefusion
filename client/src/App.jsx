@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
+import axios from 'axios'
 import './app.css'
 import logo from './assets/font.webp'
 import sound from './assets/Avengers.mp3'
@@ -40,22 +41,25 @@ export default function App() {
       const databaseURL = process.env.REACT_APP_DATABASE_URL
       const path = 'users.json'
 
-      const response = await fetch(`${databaseURL}/${path}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email,
-          contact: contact,
-          college: college.trim()
-        })
-      })
+      // const response = await fetch(`${databaseURL}/${path}`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify({
+      //     name: name.trim(),
+      //     email: email,
+      //     contact: contact,
+      //     college: college.trim()
+      //   })
+      // })
 
-      if (response.ok) {
-        console.log('Data successfully posted.')
-      }
+      // if (response.ok) {
+      //   console.log('Data successfully posted.')
+      // }
+
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/pay`)
+      console.log(data)
     }
     catch (err) {
       console.error(err)
