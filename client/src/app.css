@@ -33,12 +33,12 @@ body {
 
 .audio {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 3%;
+  left: 1.3%;
 }
 
 .audio ion-icon {
-  font-size: 1.9rem;
+  font-size: 2rem;
 }
 
 .payment {
