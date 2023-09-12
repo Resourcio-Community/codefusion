@@ -86,7 +86,7 @@ body {
   z-index: 9;
 }
 
-.form-container form {
+.form-container .form {
   display: flex;
   flex-direction: column;
   justify-content: center;

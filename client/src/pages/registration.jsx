@@ -1,48 +1,20 @@
-import { useState } from "react"
+import { useContext } from "react"
 import logo from '../assets/font.webp'
+import { Context } from "../context/Context"
+import { useHistory } from "react-router-dom"
 
 const Registration = () => {
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        contact: '',
-        college: ''
-    })
+    const { user, setUser } = useContext(Context)
+    const history = useHistory()
 
     const getUserData = (event) => {
         const { name, value } = event.target
         setUser({ ...user, [name]: value })
     }
 
-    const postData = async (e) => {
-        e.preventDefault()
-
-        const { name, email, contact, college } = user
-
-        try {
-            const databaseURL = process.env.REACT_APP_DATABASE_URL
-            const path = 'users.json'
-
-            const response = await fetch(`${databaseURL}/${path}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name.trim(),
-                    email: email,
-                    contact: contact,
-                    college: college.trim()
-                })
-            })
-
-            if (response.ok) {
-                console.log('Data successfully posted.')
-            }
-        }
-        catch (err) {
-            console.error(err)
-        }
+    const gotoPayment = () => {
+        history.push('/payment')
+        // write other logics here
     }
 
 
@@ -50,7 +22,7 @@ const Registration = () => {
         <div className='Background'>
             <div className='form-container'>
                 <img src={logo} alt='Logo' loading='lazy' />
-                <form>
+                <div className="form">
                     <div className='input'>
                         <label htmlFor='fname'>Name:</label>
                         <input
@@ -98,10 +70,10 @@ const Registration = () => {
                             spellCheck='false'
                         />
                     </div>
-                    <button type='submit' className='btn' onClick={postData}>
+                    <button type='submit' className='btn' onClick={gotoPayment}>
                         Submit
                     </button>
-                </form>
+                </div>
             </div>
         </div>
     )
