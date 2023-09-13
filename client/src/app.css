@@ -82,7 +82,8 @@ body {
   background-color: rgba(255, 255, 255, 0.55);
   border-radius: 1rem;
   padding: 0.8rem;
-  width: 30vw;
+  width: 40%;
+
 }
 
 .form-container .form {
@@ -97,6 +98,7 @@ body {
 .form-container img {
   width: 220px;
   padding: 2.5rem 0 1.2rem 0;
+  max-width: 100%;
 }
 
 .form-container .input {
@@ -127,4 +129,14 @@ body {
   background-color: #FEF698;
   font-weight: 700;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 90%; 
+  }
+
+  .form-container img {
+    width: 150px; 
+  }
 }
