@@ -38,6 +38,11 @@ body {
   left: 1.3%;
 }
 
+.audio ion-icon:hover{
+  color: #FEF698;
+  transition: 300ms ease-in;
+}
+
 .audio ion-icon {
   font-size: 2rem;
 }
