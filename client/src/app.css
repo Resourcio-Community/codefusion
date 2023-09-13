@@ -83,7 +83,6 @@ body {
   border-radius: 1rem;
   padding: 0.8rem;
   width: 30vw;
-  z-index: 9;
 }
 
 .form-container .form {
@@ -116,13 +115,13 @@ body {
   border: none;
   outline: none;
   padding: 8px 10px;
-  border-radius: 8px;
+  border-radius: 0.6rem;
   letter-spacing: 1px;
 }
 
 .form-container button {
   padding: 10px 25px;
-  border-radius: 8px;
+  border-radius: 0.6rem;
   border: none;
   color: #D94203;
   background-color: #FEF698;

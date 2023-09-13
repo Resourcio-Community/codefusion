@@ -3,7 +3,7 @@ import { createContext, useState } from "react"
 export const Context = createContext()
 
 export const ContextProvider = ({ children }) => {
-    const [txnId, setTxnId] = useState(null)
+    const [auth, setAuth] = useState(false)
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -12,7 +12,7 @@ export const ContextProvider = ({ children }) => {
     })
 
     return (
-        <Context.Provider value={{ txnId, setTxnId, user, setUser }}>
+        <Context.Provider value={{ user, setUser, auth, setAuth }}>
             {children}
         </Context.Provider>
     )

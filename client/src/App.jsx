@@ -7,7 +7,8 @@ import { Context } from './context/Context'
 
 export default function App() {
 
-  const { txnId } = useContext(Context)
+  const { auth } = useContext(Context)
+  
 
   return (
     <>
@@ -16,7 +17,7 @@ export default function App() {
           <Registration />
         </Route>
         <Route exact path='/payment'>
-          {/* {txnId ? <Registration /> : <Redirect to='/' />} */}
+          {auth ? <Payment /> : <Redirect to='/' />}
           <Payment />
         </Route>
       </Switch>

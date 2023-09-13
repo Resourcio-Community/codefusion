@@ -6,56 +6,36 @@ import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 const Registration = () => {
-  const { user, setUser } = useContext(Context)
+  const { user, setUser, setAuth } = useContext(Context)
   const history = useHistory()
-  const [errorMessages, setErrorMessages] = useState({
-    name: "",
-    email: "",
-    contact: "",
-    college:"",
-  })
 
   const getUserData = (event) => {
     const { name, value } = event.target
     setUser({ ...user, [name]: value })
-    setErrorMessages({ ...errorMessages, [name]: "" })
   }
-  
+
   const gotoPayment = () => {
-    let hasError = false;
-    if (!user.name) {
-      setErrorMessages((prev) => ({ ...prev, name: "Please enter your name" }));
-      hasError = true;
+    let hasError = false
+    if (user.name === '') {
+      hasError = true
     }
 
-    if (!user.email) {
-      setErrorMessages((prev) => ({ ...prev, email: "Please enter your email" }));
-      hasError = true;
-    } else if (!user.email.includes('@')) {
-      setErrorMessages((prev) => ({ ...prev, email: "Please enter a valid email address" }));
-      hasError = true;
+    if (user.email === '' && !user.email.includes('@')) {
+      hasError = true
     }
 
-    if (!user.contact) {
-      setErrorMessages((prev) => ({ ...prev, contact: "Please enter your contact number" }));
-      hasError = true;
-    } else if (!/^\d{10}$/.test(user.contact)) {
-      setErrorMessages((prev) => ({ ...prev, contact: "Please enter a valid 10-digit mobile number" }));
-      hasError = true;
-    }
-
-    if (!user.college) {
-      setErrorMessages((prev) => ({ ...prev, college: "Please enter your college" }));
-      hasError = true;
+    if (user.contact === '' && !/^\d{10}$/.test(user.contact)) {
+      hasError = true
     }
 
 
     if (!hasError) {
-      history.push('/payment');
+      setAuth(true)
+      history.push('/payment')
     } else {
-      toast.error("Please correct the errors and try again.");
+      toast.warn("Fill up required fields")
     }
-  };
+  }
 
   return (
     <div className='Background'>
@@ -63,7 +43,7 @@ const Registration = () => {
         <img src={logo} alt='Logo' loading='lazy' />
         <div className="form">
           <div className='input'>
-            <label htmlFor='fname'>Name:</label>
+            <label htmlFor='fname'>Name*</label>
             <input
               id='fname'
               type='text'
@@ -72,11 +52,11 @@ const Registration = () => {
               name='name'
               required
               spellCheck='false'
-              placeholder={errorMessages.name || "Name"}
+              placeholder="John Doe"
             />
           </div>
           <div className='input'>
-            <label htmlFor='femail'>Email:</label>
+            <label htmlFor='femail'>Email*</label>
             <input
               id='femail'
               type='text'
@@ -85,11 +65,11 @@ const Registration = () => {
               name='email'
               required
               spellCheck='false'
-              placeholder={errorMessages.email || "Email"}
+              placeholder="example@gmail.com"
             />
           </div>
           <div className='input'>
-            <label htmlFor='fcontact'>Contact:</label>
+            <label htmlFor='fcontact'>Contact*</label>
             <input
               id='fcontact'
               type='text'
@@ -98,11 +78,11 @@ const Registration = () => {
               name='contact'
               required
               spellCheck='false'
-              placeholder={errorMessages.contact || "Contact"}
+              placeholder="Phone no."
             />
           </div>
           <div className='input'>
-            <label htmlFor='fcontact'>College:</label>
+            <label htmlFor='fcontact'>College</label>
             <input
               id='fcontact'
               type='text'
@@ -110,7 +90,7 @@ const Registration = () => {
               value={user.college}
               onChange={getUserData}
               spellCheck='false'
-              placeholder={errorMessages.college || "College Name"}
+              placeholder="College Name"
             />
           </div>
           <button type='button' className='btn' onClick={gotoPayment}>
@@ -118,9 +98,11 @@ const Registration = () => {
           </button>
         </div>
       </div>
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-left"
+      />
     </div>
-  );
-};
+  )
+}
 
-export default Registration;
+export default Registration

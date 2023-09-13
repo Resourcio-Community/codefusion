@@ -20,8 +20,7 @@ const Payment = () => {
         setIsPlaying(!isPlaying)
     }
 
-    const { user, setTxnId } = useContext(Context)
-
+    const { user } = useContext(Context)
 
     const initPayment = async (data) => {
         const options = {
@@ -35,8 +34,6 @@ const Payment = () => {
                     const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/payment/verify`, res)
 
                     if (data) {
-                        setTxnId(res.razorpay_payment_id)
-
                         // Store validated user to firebase
                         const { name, email, contact, college } = user
                         try {
