@@ -133,19 +133,11 @@ const Registration = () => {
                   <ion-icon name="logo-discord"></ion-icon>
                 </a></li>
               </ul>
-              <p>&copy;2023 Resourcio | All Rights Reserved</p>
+              <p>&copy;{new Date().getFullYear()} <span className="copyright">Resourcio Community</span> | All Rights Reserved</p>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-
       <ToastContainer position="top-right" theme="dark" />
     </div>
     </>
